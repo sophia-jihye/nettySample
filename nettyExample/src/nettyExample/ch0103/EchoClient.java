@@ -22,15 +22,24 @@ public final class EchoClient {
 		EventLoopGroup group = new NioEventLoopGroup();
 
 		try {
-			Bootstrap b = new Bootstrap();
-			b.group(group).channel(NioSocketChannel.class).handler(new ChannelInitializer<SocketChannel>() {
 
-				@Override
-				public void initChannel(SocketChannel ch) throws Exception {
-					ChannelPipeline p = ch.pipeline();
-					p.addLast(new EchoClientHandler());
-				}
-			});
+			// 클라이언트 app을 위한 bootstrap 객체 생성
+			Bootstrap b = new Bootstrap();
+			b.group(group)
+
+					// 클라이언트 소켓 채널 NIO 설정
+					.channel(NioSocketChannel.class)
+
+					// 클라이언트 소켓 채널 이벤트 핸들러 설정을 위해 객체 생성
+					.handler(new ChannelInitializer<SocketChannel>() {
+						@Override
+						public void initChannel(SocketChannel ch) throws Exception {
+							ChannelPipeline p = ch.pipeline();
+
+							// 클라이언트 소켓 채널 이벤트 핸들러 등록
+							p.addLast(new EchoClientHandler());
+						}
+					});
 
 			ChannelFuture f = b.connect("localhost", 8888).sync();
 
