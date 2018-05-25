@@ -23,6 +23,8 @@ public class EchoServer {
 		EventLoopGroup workerGroup = new NioEventLoopGroup();
 
 		try {
+
+			// [1] 부트스트랩으로 네트워크 app에 필요한 설정을 지정한다
 			ServerBootstrap b = new ServerBootstrap();
 
 			// bossGroup: 클라이언트의 연결을 수락하는 부모 스레드 그룹
@@ -42,6 +44,7 @@ public class EchoServer {
 					// 클라이언트 소켓 옵션 추가
 					.childOption(ChannelOption.SO_LINGER, 0)
 
+					// [2] 부트스트랩에 이벤트 핸들러를 사용하여 채널 파이프라인을 구성한다
 					// 자식 채널의 초기화 방법 설정
 					// 서버 소켓 채널로 연결된 클라이언트 채널에 파이프라인을 설정
 					.childHandler(new ChannelInitializer<SocketChannel>() {
@@ -50,6 +53,9 @@ public class EchoServer {
 
 							// 채널 파이프라인 객체 생성
 							ChannelPipeline p = ch.pipeline();
+
+							// netty의 이벤트 루프가 채널 파이프라인에 등록된 이벤트 핸들러를 차례로 가져가서
+							// 이벤트 메서드를 실행함
 
 							// 로깅 핸들러 추가
 							// 클라이언트와 통신하는 소켓에 대해서 동작
