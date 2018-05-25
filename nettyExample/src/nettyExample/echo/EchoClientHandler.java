@@ -1,4 +1,4 @@
-package nettyExample.ch0103;
+package nettyExample.echo;
 
 import java.nio.charset.Charset;
 

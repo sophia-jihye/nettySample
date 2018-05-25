@@ -1,4 +1,4 @@
-package nettyExample.ch02;
+package nettyExample.ch02.blocking;
 
 import java.io.IOException;
 import java.io.InputStream;
