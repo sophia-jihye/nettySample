@@ -1,4 +1,4 @@
-package nettyExample.ch01;
+package nettyExample.ch0103;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
