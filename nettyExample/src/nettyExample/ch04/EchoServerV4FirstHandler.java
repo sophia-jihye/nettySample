@@ -18,6 +18,6 @@ public class EchoServerV4FirstHandler extends ChannelInboundHandlerAdapter {
 
 		// secondHandler의 channelRead()를 호출하기 위해
 		// 채널 파이프라인에 이벤트를 발생시킴
-		 ctx.fireChannelRead(msg);
+		ctx.fireChannelRead(msg);
 	}
 }
