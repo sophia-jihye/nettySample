@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
-import java.net.ServerSocket;
+import java.net.Socket;
 
 public class BlockingServer {
 	public static void main(String[] args) throws Exception {
@@ -13,11 +13,15 @@ public class BlockingServer {
 	}
 
 	private void run() throws IOException {
+
+		// 서버 소켓 생성
 		ServerSocket server = new ServerSocket(8888);
 		System.out.println("접속 대기중");
 
 		while (true) {
-			java.net.Socket sock = server.accept();
+
+			// accept: 클라이언트가 서버에 접속하면 서버 소켓으로부터 클라이언트 소켓을 얻어옴
+			Socket sock = server.accept();
 			System.out.println("클라이언트 연결됨");
 
 			OutputStream out = sock.getOutputStream();

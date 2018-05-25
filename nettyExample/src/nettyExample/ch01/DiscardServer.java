@@ -26,7 +26,7 @@ public class DiscardServer {
 						}
 					});
 
-			// bind
+			// bind: 해당 포트번호로 서버 bind. 클라이언트의 연결을 기다립니다.
 			ChannelFuture f = b.bind(8888).sync();
 
 			f.channel().closeFuture().sync();
