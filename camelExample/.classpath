@@ -14,5 +14,7 @@
 	<classpathentry kind="lib" path="C:/DevelopTools/jar/log4j/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/DevelopTools/jar/camel/spring-expression-4.3.14.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/DevelopTools/jar/camel/spring-aop-4.3.14.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/DevelopTools/jar/camel/camel-mail-2.19.0.jar"/>
+	<classpathentry kind="lib" path="C:/DevelopTools/jar/camel/mail-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

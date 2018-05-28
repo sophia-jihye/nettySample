@@ -1,4 +1,4 @@
-package camelExample.camel;
+package camelExample.camel.console;
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ import org.apache.camel.spring.Main;
 public class ToConsole {
 	public static void main(String[] args) throws Exception {
 
-		String ctxPath = "camelExample/camel/ToConsole.xml";
+		String ctxPath = "camelExample/camel/console/ToConsole.xml";
 
 		Main main = new Main();
 		main.setApplicationContextUri(ctxPath);
